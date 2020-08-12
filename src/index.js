@@ -1,5 +1,7 @@
-const App = () => {
-    console.log('Hello App');
-}
+import Router from './router/index.routes';
 
-App();
+Router('#/');
+
+window.addEventListener('hashchange', () => {
+    Router(window.location.hash);
+})
