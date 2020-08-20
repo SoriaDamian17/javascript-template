@@ -1,7 +1,8 @@
 import Router from './router/index.routes';
 
-Router('#/');
+const App = document.getElementById('root');
+Router(App, '#/');
 
 window.addEventListener('hashchange', () => {
-    Router(window.location.hash);
+    Router(App, window.location.hash);
 })

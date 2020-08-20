@@ -1,15 +1,18 @@
-import Home from "../pages/Home";
+import UseRender from "../hook/useRender";
+import { pages } from '../pages';
 
-let App = document.getElementById('root');
-
-function Router(router) {
+function Router(App, router) {
     App.innerHTML = '';
     switch (router) {
         case '#/': {
-            return App.appendChild(Home());
+            return App.appendChild(
+                UseRender(pages.Home())
+            );
         }
         default:
-            return '';
+            return App.appendChild(
+                UseRender(pages.NotFound())
+            );
     }
 }
 
